@@ -7,16 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D5DC6D321A1A6CD00FBC532 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC6D221A1A6CD00FBC532 /* GradientView.swift */; };
+		3D5DC6D921A1AE9C00FBC532 /* LocationsStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC6D821A1AE9C00FBC532 /* LocationsStorageManager.swift */; };
+		3D5DC6DC21A1AECA00FBC532 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC6DB21A1AECA00FBC532 /* PlaceModel.swift */; };
+		3D5DC6DF21A1AF6C00FBC532 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC6DE21A1AF6C00FBC532 /* CoreDataService.swift */; };
+		3D5DC6E221A1B65300FBC532 /* RoundedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC6E121A1B65300FBC532 /* RoundedTableView.swift */; };
+		3D5DC6E621A1B8B500FBC532 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC6E421A1B8B500FBC532 /* LocationTableViewCell.swift */; };
+		3D5DC6E921A1B90000FBC532 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5DC6E821A1B90000FBC532 /* RoundedView.swift */; };
+		3D5DC6EB21A1DE2000FBC532 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D5DC6EA21A1DE2000FBC532 /* LocationTableViewCell.xib */; };
 		3DEAB59221A1A00900A0023C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAB59121A1A00900A0023C /* AppDelegate.swift */; };
 		3DEAB59421A1A00900A0023C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAB59321A1A00900A0023C /* ViewController.swift */; };
 		3DEAB59721A1A00900A0023C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEAB59521A1A00900A0023C /* Main.storyboard */; };
 		3DEAB59A21A1A00900A0023C /* ForecastApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAB59821A1A00900A0023C /* ForecastApp.xcdatamodeld */; };
 		3DEAB59C21A1A00C00A0023C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DEAB59B21A1A00C00A0023C /* Assets.xcassets */; };
 		3DEAB59F21A1A00C00A0023C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEAB59D21A1A00C00A0023C /* LaunchScreen.storyboard */; };
+		3DEAB5A921A1A54E00A0023C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAB5A821A1A54E00A0023C /* View.swift */; };
+		3DEAB5AB21A1A58400A0023C /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAB5AA21A1A58400A0023C /* TableView.swift */; };
+		3DEAB5AD21A1A5BB00A0023C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAB5AC21A1A5BB00A0023C /* BaseViewController.swift */; };
+		3DEAB5AF21A1A5EB00A0023C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAB5AE21A1A5EB00A0023C /* RoundedButton.swift */; };
 		F2B548F5AC74C44E9091455C /* Pods_ForecastApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 637F8FF6BE4979E8FD61CAEF /* Pods_ForecastApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D5DC6D221A1A6CD00FBC532 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		3D5DC6D821A1AE9C00FBC532 /* LocationsStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsStorageManager.swift; sourceTree = "<group>"; };
+		3D5DC6DB21A1AECA00FBC532 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		3D5DC6DE21A1AF6C00FBC532 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		3D5DC6E121A1B65300FBC532 /* RoundedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTableView.swift; sourceTree = "<group>"; };
+		3D5DC6E421A1B8B500FBC532 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		3D5DC6E821A1B90000FBC532 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		3D5DC6EA21A1DE2000FBC532 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		3DEAB58E21A1A00900A0023C /* ForecastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEAB59121A1A00900A0023C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DEAB59321A1A00900A0023C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,6 +45,10 @@
 		3DEAB59B21A1A00C00A0023C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DEAB59E21A1A00C00A0023C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DEAB5A021A1A00C00A0023C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DEAB5A821A1A54E00A0023C /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		3DEAB5AA21A1A58400A0023C /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		3DEAB5AC21A1A5BB00A0023C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		3DEAB5AE21A1A5EB00A0023C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		4582194EC29ED03E04993013 /* Pods-ForecastApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForecastApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ForecastApp/Pods-ForecastApp.release.xcconfig"; sourceTree = "<group>"; };
 		637F8FF6BE4979E8FD61CAEF /* Pods_ForecastApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForecastApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DCA92B0FD447C40525194BC /* Pods-ForecastApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForecastApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ForecastApp/Pods-ForecastApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -42,6 +66,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D5DC6D721A1AE4D00FBC532 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				3D5DC6D821A1AE9C00FBC532 /* LocationsStorageManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		3D5DC6DA21A1AEB500FBC532 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				3D5DC6DB21A1AECA00FBC532 /* PlaceModel.swift */,
+			);
+			path = "Data Models";
+			sourceTree = "<group>";
+		};
+		3D5DC6DD21A1AF5600FBC532 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				3DEAB59821A1A00900A0023C /* ForecastApp.xcdatamodeld */,
+				3D5DC6DE21A1AF6C00FBC532 /* CoreDataService.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		3D5DC6E321A1B86600FBC532 /* LocationTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D5DC6E421A1B8B500FBC532 /* LocationTableViewCell.swift */,
+				3D5DC6EA21A1DE2000FBC532 /* LocationTableViewCell.xib */,
+			);
+			path = LocationTableViewCell;
+			sourceTree = "<group>";
+		};
 		3DEAB58521A1A00900A0023C = {
 			isa = PBXGroup;
 			children = (
@@ -63,15 +121,41 @@
 		3DEAB59021A1A00900A0023C /* ForecastApp */ = {
 			isa = PBXGroup;
 			children = (
+				3D5DC6E321A1B86600FBC532 /* LocationTableViewCell */,
+				3D5DC6DD21A1AF5600FBC532 /* Database */,
+				3D5DC6DA21A1AEB500FBC532 /* Data Models */,
+				3D5DC6D721A1AE4D00FBC532 /* Managers */,
+				3DEAB5A721A1A51600A0023C /* BaseView */,
+				3DEAB5A621A1A4FA00A0023C /* Extensions */,
 				3DEAB59121A1A00900A0023C /* AppDelegate.swift */,
 				3DEAB59321A1A00900A0023C /* ViewController.swift */,
 				3DEAB59521A1A00900A0023C /* Main.storyboard */,
 				3DEAB59B21A1A00C00A0023C /* Assets.xcassets */,
 				3DEAB59D21A1A00C00A0023C /* LaunchScreen.storyboard */,
 				3DEAB5A021A1A00C00A0023C /* Info.plist */,
-				3DEAB59821A1A00900A0023C /* ForecastApp.xcdatamodeld */,
 			);
 			path = ForecastApp;
+			sourceTree = "<group>";
+		};
+		3DEAB5A621A1A4FA00A0023C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3DEAB5A821A1A54E00A0023C /* View.swift */,
+				3DEAB5AA21A1A58400A0023C /* TableView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3DEAB5A721A1A51600A0023C /* BaseView */ = {
+			isa = PBXGroup;
+			children = (
+				3DEAB5AC21A1A5BB00A0023C /* BaseViewController.swift */,
+				3DEAB5AE21A1A5EB00A0023C /* RoundedButton.swift */,
+				3D5DC6D221A1A6CD00FBC532 /* GradientView.swift */,
+				3D5DC6E121A1B65300FBC532 /* RoundedTableView.swift */,
+				3D5DC6E821A1B90000FBC532 /* RoundedView.swift */,
+			);
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 		5012100AAD11E18489C4FDAA /* Pods */ = {
@@ -103,6 +187,7 @@
 				3DEAB58B21A1A00900A0023C /* Frameworks */,
 				3DEAB58C21A1A00900A0023C /* Resources */,
 				93B0C5962F55693BA3F6CFFF /* [CP] Embed Pods Frameworks */,
+				5082FD0254DB59DFA4EF2AC1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -151,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D5DC6EB21A1DE2000FBC532 /* LocationTableViewCell.xib in Resources */,
 				3DEAB59F21A1A00C00A0023C /* LaunchScreen.storyboard in Resources */,
 				3DEAB59C21A1A00C00A0023C /* Assets.xcassets in Resources */,
 				3DEAB59721A1A00900A0023C /* Main.storyboard in Resources */,
@@ -160,6 +246,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5082FD0254DB59DFA4EF2AC1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ForecastApp/Pods-ForecastApp-resources.sh",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ForecastApp/Pods-ForecastApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7FC0740EC008484B2DCFC539 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -213,9 +321,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DEAB5A921A1A54E00A0023C /* View.swift in Sources */,
+				3DEAB5AB21A1A58400A0023C /* TableView.swift in Sources */,
+				3D5DC6E921A1B90000FBC532 /* RoundedView.swift in Sources */,
 				3DEAB59A21A1A00900A0023C /* ForecastApp.xcdatamodeld in Sources */,
 				3DEAB59421A1A00900A0023C /* ViewController.swift in Sources */,
+				3D5DC6D921A1AE9C00FBC532 /* LocationsStorageManager.swift in Sources */,
+				3D5DC6E621A1B8B500FBC532 /* LocationTableViewCell.swift in Sources */,
+				3DEAB5AF21A1A5EB00A0023C /* RoundedButton.swift in Sources */,
 				3DEAB59221A1A00900A0023C /* AppDelegate.swift in Sources */,
+				3D5DC6DC21A1AECA00FBC532 /* PlaceModel.swift in Sources */,
+				3D5DC6DF21A1AF6C00FBC532 /* CoreDataService.swift in Sources */,
+				3D5DC6E221A1B65300FBC532 /* RoundedTableView.swift in Sources */,
+				3D5DC6D321A1A6CD00FBC532 /* GradientView.swift in Sources */,
+				3DEAB5AD21A1A5BB00A0023C /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V2UR6Y3A9;
 				INFOPLIST_FILE = ForecastApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,6 +501,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5V2UR6Y3A9;
 				INFOPLIST_FILE = ForecastApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

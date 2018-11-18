@@ -8,5 +8,5 @@ target 'ForecastApp' do
   # Pods for ForecastApp
 pod 'Alamofire'
 pod 'ObjectMapper'
-
+pod 'GooglePlaces'
 end
