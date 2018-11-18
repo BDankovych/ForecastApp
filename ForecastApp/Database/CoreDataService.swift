@@ -89,7 +89,7 @@ class CoreDataService {
         
         do {
             result = try moc.fetch(request) as? [T]
-        } catch let catchedError as Error {
+        } catch let catchedError {
             error = catchedError
         }
         

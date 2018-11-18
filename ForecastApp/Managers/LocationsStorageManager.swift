@@ -8,7 +8,6 @@ class LocationsStorageManager: NSObject {
     
     private var placesList = [PlaceModel]() {
         didSet {
-            print("Hello")
         }
     }
     

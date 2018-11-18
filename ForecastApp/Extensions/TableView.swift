@@ -15,7 +15,6 @@ extension UITableView {
     func cell<T: UITableViewCell>(cellType: T.Type, nibName: String? = nil, identifier: String? = nil) -> T {
         let identifier = identifier ?? "\(cellType)"
         guard let cell = self.dequeueReusableCell(withIdentifier: identifier) as? T else {
-            print("cell own type")
             return T.loadViewFromNib() ?? T()
         }
         

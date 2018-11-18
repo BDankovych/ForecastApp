@@ -42,17 +42,22 @@ class ViewController: BaseViewController {
         present(placePickerController, animated: true, completion: nil)
     }
     
+    private func goToDetailInfo(with place: PlaceModel) {
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: WeatherDetailViewController.identifier) as? WeatherDetailViewController else {
+            fatalError()
+        }
+        detailVC.place = place
+        present(detailVC, animated: true, completion: nil)
+    }
 
 }
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        goToDetailInfo(with: test[indexPath.row])
+    }
 }
 
 extension ViewController: UITableViewDataSource {
-    
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return LocationTableViewCell.cellHeight
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return test.count
@@ -71,7 +76,10 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        LocationsStorageManager.add(PlaceModel(place))
+        let placeModel = PlaceModel(place)
+        LocationsStorageManager.add(placeModel)
+//        goToDetailInfo(with: placeModel)
+        
         dismiss(animated: true, completion: nil)
     }
     
