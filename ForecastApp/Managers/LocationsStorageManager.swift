@@ -24,8 +24,11 @@ class LocationsStorageManager: NSObject {
         observer.didChangeList(instance.placesList)
     }
     
+    static func addCurrentLocation(_ place: PlaceModel) {
+        instance.placesList = [place]
+    }
     static func loadLocations() {
-        instance.placesList = CoreDataService.loadAllLocations()
+        instance.placesList += CoreDataService.loadAllLocations()
     }
     
     static func getList() -> [PlaceModel] {

@@ -71,7 +71,6 @@ class WeatherDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        isInFavorites = LocationsStorageManager.isInFavorites(place: place)
         weatherCollectionView.register(cellType: WeatherCollectionViewCell.self)
         weatherCollectionView.dataSource = self
         
@@ -94,6 +93,12 @@ class WeatherDetailViewController: BaseViewController {
     }
     
     private func configureView(with place: PlaceModel) {
+        if place.name != "Current location" {
+            starButton.isHidden = false
+            isInFavorites = LocationsStorageManager.isInFavorites(place: place)
+        } else {
+            starButton.isHidden = true
+        }
         locationsName.text = place.name
         //TODO: add temp symbol
     }

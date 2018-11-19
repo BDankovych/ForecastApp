@@ -11,6 +11,14 @@ class PlaceModel {
     
     private init() {}
     
+    convenience init(name: String, lat: CLLocationDegrees, long: CLLocationDegrees) {
+        self.init()
+        self.name = name
+        self.latitude = lat
+        self.longitude = long
+        self.subtitle = ""
+    }
+    
     convenience init(_ place: GMSPlace) {
         self.init()
         name = place.name

@@ -20,6 +20,8 @@ class ViewController: BaseViewController {
         return placePickerController
     }()
 
+    private var locationManager = CLLocationManager()
+    
     @IBOutlet weak var locationsTableView: RoundedTableView!
     
     private var locationsList = [PlaceModel]() {
@@ -31,10 +33,18 @@ class ViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         LocationsStorageManager.addStorageObserver(self)
-        LocationsStorageManager.loadLocations()
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        }
+//
         locationsTableView.delegate = self
         locationsTableView.dataSource = self
-        locationsTableView.register(cellType: LocationTableViewCell.self)
         
     }
     
@@ -53,8 +63,49 @@ class ViewController: BaseViewController {
         detailVC.place = place
         present(detailVC, animated: true, completion: nil)
     }
+    
+    func currentLocationAllowed() {
+        self.startActivityIndicator()
+        self.getCurrentPlace { (placeModel, error) in
+            if let error = error {
+                self.showErrorPopup(text: error.localizedDescription)
+            } else {
+                LocationsStorageManager.addCurrentLocation(placeModel!)
+            }
+            LocationsStorageManager.loadLocations()
+            self.stopActivityIndicator()
+        }
+    }
+    
+    func getCurrentPlace(_ completion:@escaping (PlaceModel?, Error?) -> Void ) {
+        let placeClient = GMSPlacesClient()
+        placeClient.currentPlace { (placeList, error) in
+            guard let place = placeList?.likelihoods.first?.place, error == nil else {
+                completion(nil, error)
+                return
+            }
+            let placeModel = PlaceModel(place)
+            placeModel.name = "Current location"
+            placeModel.subtitle = ""
+            completion(placeModel, nil)
+        }
+    }
 
 }
+
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .authorizedWhenInUse:
+            currentLocationAllowed()
+            break
+        default:
+            manager.requestWhenInUseAuthorization()
+        }
+    }
+}
+
+
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        goToDetailInfo(with: locationsList[indexPath.row])

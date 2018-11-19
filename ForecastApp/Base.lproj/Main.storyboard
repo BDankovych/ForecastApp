@@ -80,6 +80,52 @@
                                 <rect key="frame" x="20" y="129" width="374" height="713"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.53333333329999999" green="0.79607843140000001" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationTableViewCell" rowHeight="80" id="RdE-VQ-0Sj" customClass="LocationTableViewCell" customModule="ForecastApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RdE-VQ-0Sj" id="tuA-5c-rIj" customClass="RoundedView" customModule="ForecastApp" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="79.666666666666671"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wof-gX-dAn">
+                                                    <rect key="frame" x="20" y="11" width="334" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enU-7W-Q8h">
+                                                    <rect key="frame" x="20" y="48" width="334" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="XsK-te-5bu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="enU-7W-Q8h" firstAttribute="top" secondItem="wof-gX-dAn" secondAttribute="bottom" constant="10" id="FMY-Jo-cYq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wof-gX-dAn" secondAttribute="trailing" id="Ioi-WK-6Jh"/>
+                                                <constraint firstItem="wof-gX-dAn" firstAttribute="top" secondItem="tuA-5c-rIj" secondAttribute="topMargin" id="RW2-0N-Uae"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="enU-7W-Q8h" secondAttribute="trailing" id="SrE-U4-p5b"/>
+                                                <constraint firstItem="enU-7W-Q8h" firstAttribute="leading" secondItem="tuA-5c-rIj" secondAttribute="leadingMargin" id="UKM-16-euk"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="enU-7W-Q8h" secondAttribute="bottom" id="eVP-Sz-KZC"/>
+                                                <constraint firstItem="wof-gX-dAn" firstAttribute="leading" secondItem="tuA-5c-rIj" secondAttribute="leadingMargin" id="kBB-vJ-4JH"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="8"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="wof-gX-dAn" id="ydK-3a-Rig"/>
+                                            <outlet property="subtitleLabel" destination="enU-7W-Q8h" id="Ewe-MC-jVj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="12"/>
