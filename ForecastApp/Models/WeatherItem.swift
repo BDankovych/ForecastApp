@@ -23,7 +23,7 @@ class ShortWeatherItem: Mappable {
     }
     
     required init?(map: Map) {
-        print(map)
+        print(map.JSON)
         if map.JSON[JSONKeys.id.rawValue] == nil ||
             map.JSON[JSONKeys.main.rawValue] == nil ||
             map.JSON[JSONKeys.description.rawValue] == nil ||
@@ -111,7 +111,7 @@ class WeatherItem: Mappable {
         }
     }
     var mainItem: MainWeatherItem!
-    var shortWeatherItem: ShortWeatherItem!
+    var shortWeatherItems: [ShortWeatherItem]!
     var cloudiness: Int!
     var windItem: WindWeatherItem!
     var rainVolume: Double?
@@ -128,7 +128,7 @@ class WeatherItem: Mappable {
     }
     
     required init?(map: Map) {
-        
+        print(map.JSON[JSONKeys.shortWeatherItem.rawValue] == nil)
         if map.JSON[JSONKeys.forecastTimeInterval.rawValue] == nil ||
             map.JSON[JSONKeys.mainItem.rawValue] == nil ||
             map.JSON[JSONKeys.shortWeatherItem.rawValue] == nil ||
@@ -138,9 +138,10 @@ class WeatherItem: Mappable {
     }
     
     func mapping(map: Map) {
+        shortWeatherItems <- map[JSONKeys.shortWeatherItem.rawValue]
+        print(map[JSONKeys.shortWeatherItem.rawValue].JSON)
         forecastTimeInterval <- map[JSONKeys.forecastTimeInterval.rawValue]
         mainItem <- map[JSONKeys.mainItem.rawValue]
-        shortWeatherItem <- map[JSONKeys.shortWeatherItem.rawValue]
         cloudiness <- map[JSONKeys.cloudiness.rawValue]
         windItem <- map[JSONKeys.windItem.rawValue]
         rainVolume <- map[JSONKeys.rainVolume.rawValue]
