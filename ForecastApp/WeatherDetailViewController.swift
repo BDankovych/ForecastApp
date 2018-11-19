@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import LatLongToTimezone
+import CoreLocation
+
 
 fileprivate enum Direction {
     case up
@@ -51,6 +54,7 @@ class WeatherDetailViewController: BaseViewController {
     
  
     var place: PlaceModel!
+    private var placeTimeZone: TimeZone!
     
     private var isInFavorites = false {
         didSet {
@@ -93,19 +97,21 @@ class WeatherDetailViewController: BaseViewController {
     }
     
     private func configureView(with place: PlaceModel) {
-        if place.name != "Current location" {
+        if place.name != "Current location".localized() {
             starButton.isHidden = false
             isInFavorites = LocationsStorageManager.isInFavorites(place: place)
         } else {
             starButton.isHidden = true
         }
         locationsName.text = place.name
-        //TODO: add temp symbol
+        tempSymbol.text = SettingsManager.tempUnits.getSymbol()
+        placeTimeZone = TimezoneMapper.latLngToTimezone(CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude))
     }
     
     private func configureView(with weatherItem: WeatherItem) {
         let formatter = DateFormatter()
         formatter.dateFormat = "MMM d, h:mm a"
+        formatter.timeZone = placeTimeZone
         currentDate.text = formatter.string(from: weatherItem.forecastDate)
         currentTemp.text = String(describing: weatherItem.mainItem.temp!)
         mainWeatherLabel.text = weatherItem.shortWeatherItems.first!.main

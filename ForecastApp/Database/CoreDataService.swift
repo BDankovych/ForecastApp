@@ -78,6 +78,32 @@ class CoreDataService {
         }
     }
     
+    static func getSettings() -> SettingsModel {
+        var settingsModel: SettingsModel!
+        if let settingMO = instance.getObjects(SettingsStorageMO.self).first {
+            settingsModel = SettingsModel(settingMO)
+        } else {
+            guard let settingMO = insertObject(SettingsStorageMO.self) else {
+                fatalError()
+            }
+            
+            settingMO.currentLanguage = 0
+            settingMO.speedUnits = 0
+            settingMO.tempUnits = 0
+            save()
+            settingsModel = SettingsModel(settingMO)
+        }
+        return settingsModel
+    }
+    
+    static func saveSettings() {
+        let settingMO = instance.getObjects(SettingsStorageMO.self).first!
+        settingMO.currentLanguage = Int16(SettingsManager.currentLanguage.rawValue)
+        settingMO.speedUnits = Int16(SettingsManager.speedUnits.rawValue)
+        settingMO.tempUnits = Int16(SettingsManager.tempUnits.rawValue)
+        save()
+    }
+    
     private static func save() {
         do {
             try instance.managedObjectContext?.save()

@@ -15,6 +15,8 @@ class BaseViewController: UIViewController {
         self.setupActivityIndicator()
     }
     
+    func localizeView() {}
+    
     
     func showPopUp(title: String? = nil, text: String? = nil, completion: (() -> ())? = nil) {
         let alertController = UIAlertController(title: title, message: text, preferredStyle: .alert)

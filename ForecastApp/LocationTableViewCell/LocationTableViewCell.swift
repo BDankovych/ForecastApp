@@ -9,6 +9,8 @@
 import UIKit
 
 class LocationTableViewCell: UITableViewCell {
+    
+    static var identifier = "LocationTableViewCellID"
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!

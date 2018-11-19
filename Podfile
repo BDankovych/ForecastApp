@@ -9,4 +9,5 @@ target 'ForecastApp' do
 pod 'Alamofire'
 pod 'ObjectMapper'
 pod 'GooglePlaces'
+pod 'LatLongToTimezone'
 end

@@ -6,7 +6,13 @@
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="subtitle" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="SettingsStorageMO" representedClassName="SettingsStorageMO" syncable="YES" codeGenerationType="class">
+        <attribute name="currentLanguage" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="speedUnits" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tempUnits" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
     <elements>
         <element name="PlaceModelMO" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="SettingsStorageMO" positionX="-63" positionY="9" width="128" height="90"/>
     </elements>
 </model>

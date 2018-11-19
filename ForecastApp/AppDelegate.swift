@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         GMSPlacesClient.provideAPIKey("AIzaSyCDRI0CcPV4iP10cKvWpTq0ABJdEj3PjMw")
+        SettingsManager.loadSettings()
         return true
     }
 

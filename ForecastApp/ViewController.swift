@@ -35,16 +35,12 @@ class ViewController: BaseViewController {
         LocationsStorageManager.addStorageObserver(self)
         self.locationManager.requestAlwaysAuthorization()
         
-        // For use in foreground
         self.locationManager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         }
-//
-        locationsTableView.delegate = self
-        locationsTableView.dataSource = self
         
     }
     
@@ -85,7 +81,7 @@ class ViewController: BaseViewController {
                 return
             }
             let placeModel = PlaceModel(place)
-            placeModel.name = "Current location"
+            placeModel.name = "Current location".localized()
             placeModel.subtitle = ""
             completion(placeModel, nil)
         }
@@ -119,7 +115,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.cell(cellType: LocationTableViewCell.self)
+        let cell = tableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.identifier) as! LocationTableViewCell
         
         cell.configureView(with: locationsList[indexPath.row])
         return cell
