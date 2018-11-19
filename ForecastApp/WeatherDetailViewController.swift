@@ -67,6 +67,7 @@ class WeatherDetailViewController: BaseViewController {
     //Data
     
     private var dataForDisplaying = [WeatherItem]()
+    private var weatherRequestResult: WeatherRequestResult!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,7 +108,7 @@ class WeatherDetailViewController: BaseViewController {
     }
     
     private func configureView(with weatherResult: WeatherRequestResult) {
-        
+        weatherRequestResult = weatherResult
         if segmentControll.selectedSegmentIndex == 0 {
             setupWeatherHourly(with: weatherResult)
         } else {
@@ -115,13 +116,23 @@ class WeatherDetailViewController: BaseViewController {
         }
     }
     
+    @IBAction func segmentValueChanged(_ sender: UISegmentedControl) {
+        if segmentControll.selectedSegmentIndex == 0 {
+            setupWeatherHourly(with: weatherRequestResult)
+        } else {
+            setupWeatherDayly(with: weatherRequestResult)
+        }
+    }
+    
+    
     private func setupWeatherHourly(with weatherResult: WeatherRequestResult) {
-        dataForDisplaying = weatherResult.list.sorted{ return $0.forecastDate < $1.forecastDate}
+        dataForDisplaying = weatherResult.getHourlyList()
         weatherCollectionView.reloadData()
     }
     
     private func setupWeatherDayly(with weatherResult: WeatherRequestResult) {
-        
+        dataForDisplaying = weatherResult.getDaylyList()
+        weatherCollectionView.reloadData()
     }
     
     
@@ -178,7 +189,7 @@ extension WeatherDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.cell(cellType: WeatherCollectionViewCell.self, for: indexPath)
-        cell.configure(with: dataForDisplaying[indexPath.row], mode: .dayly)
+        cell.configure(with: dataForDisplaying[indexPath.row], mode: segmentControll.selectedSegmentIndex == 0 ? .hourly : .dayly)
         return cell
     }
     

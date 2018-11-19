@@ -252,6 +252,9 @@
                                                     <segment title="Hourly"/>
                                                     <segment title="Dayly"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="segmentValueChanged:" destination="Xwt-ZN-650" eventType="valueChanged" id="UUH-Tg-zRl"/>
+                                                </connections>
                                             </segmentedControl>
                                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowUp" translatesAutoresizingMaskIntoConstraints="NO" id="gFe-lZ-1MS">
                                                 <rect key="frame" x="20" y="10" width="20" height="20"/>
