@@ -22,11 +22,16 @@ class ViewController: BaseViewController {
 
     @IBOutlet weak var locationsTableView: RoundedTableView!
     
-    private var test = [PlaceModel]()
+    private var locationsList = [PlaceModel]() {
+        didSet {
+            locationsTableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        LocationsStorageManager.addStorageObserver(self)
+        LocationsStorageManager.loadLocations()
         locationsTableView.delegate = self
         locationsTableView.dataSource = self
         locationsTableView.register(cellType: LocationTableViewCell.self)
@@ -34,7 +39,6 @@ class ViewController: BaseViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        test = LocationsStorageManager.getList()
         locationsTableView.reloadData()
     }
 
@@ -53,20 +57,20 @@ class ViewController: BaseViewController {
 }
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        goToDetailInfo(with: test[indexPath.row])
+       goToDetailInfo(with: locationsList[indexPath.row])
     }
 }
 
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return test.count
+        return locationsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cell(cellType: LocationTableViewCell.self)
         
-        cell.configureView(with: test[indexPath.row])
+        cell.configureView(with: locationsList[indexPath.row])
         return cell
         
     }
@@ -77,10 +81,9 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         let placeModel = PlaceModel(place)
-        LocationsStorageManager.add(placeModel)
-//        goToDetailInfo(with: placeModel)
-        
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: true) {
+            self.goToDetailInfo(with: placeModel)
+        }
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
@@ -97,5 +100,12 @@ extension ViewController: GMSAutocompleteViewControllerDelegate {
     
     func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+}
+
+
+extension ViewController: LocationsStorageManagerObserver {
+    func didChangeList(_ list: [PlaceModel]) {
+        locationsList = list
     }
 }

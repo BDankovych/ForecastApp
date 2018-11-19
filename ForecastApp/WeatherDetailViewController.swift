@@ -35,7 +35,19 @@ class WeatherDetailViewController: BaseViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     
     
+    @IBOutlet weak var starButton: UIButton!
+    
+    
     var place: PlaceModel!
+    
+    private var isInFavorites = false {
+        didSet {
+            DispatchQueue.main.async {
+                self.starButton.imageView?.image = !self.isInFavorites ? "star".image : "starSelected".image
+            }
+        }
+    }
+    
     
     
     private var currentArrowDirection = Direction.up
@@ -46,6 +58,7 @@ class WeatherDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        isInFavorites = LocationsStorageManager.isInFavorites(place: place)
         weatherCollectionView.register(cellType: WeatherCollectionViewCell.self)
         weatherCollectionView.dataSource = self
         
@@ -65,6 +78,7 @@ class WeatherDetailViewController: BaseViewController {
         }
     }
     
+    
     private func configureView(with weatherResult: WeatherRequestResult) {
         if segmentControll.selectedSegmentIndex == 0 {
             setupWeatherHourly(with: weatherResult)
@@ -83,6 +97,16 @@ class WeatherDetailViewController: BaseViewController {
     }
     
     
+    @IBAction func starButtonPressed(_ sender: Any) {
+        
+        if !isInFavorites {
+            LocationsStorageManager.addToFavorites(place)
+            isInFavorites = true
+        } else {
+            LocationsStorageManager.removeFromFavorites(place)
+            isInFavorites = false
+        }
+    }
     
     @IBAction func infoBlockSwippedUp(_ sender: UISwipeGestureRecognizer) {
         if currentArrowDirection == .up {
@@ -96,6 +120,10 @@ class WeatherDetailViewController: BaseViewController {
             currentArrowDirection.toggle()
             updateInfoBlock(direction: .down)
         }
+    }
+    
+    @IBAction func backPressed(_ sender: Any) {
+        dismiss(animated: true)
     }
     
     private func updateInfoBlock(direction: Direction) {

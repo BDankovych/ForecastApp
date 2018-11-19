@@ -11,7 +11,7 @@ import UIKit
 
 extension String {
     
-    var imege: UIImage! {
+    var image: UIImage! {
         return UIImage(named: self) ?? UIImage()
     }
 }

@@ -18,4 +18,25 @@ class PlaceModel {
         longitude = place.coordinate.longitude
         subtitle = place.formattedAddress
     }
+    
+    convenience init(_ mo: PlaceModelMO) {
+        self.init()
+        name = mo.name
+        latitude = mo.latitude
+        longitude = mo.longitude
+        subtitle = mo.subtitle
+    }
+    
+}
+
+func == ( _ first: PlaceModel, _ second: PlaceModel) -> Bool {
+    let offset: CLLocationDegrees = 0.01
+    return first.name == second.name &&
+        abs(first.latitude - second.latitude) < offset &&
+        abs(first.longitude - second.longitude) < offset
+}
+
+func == ( _ first: PlaceModel, _ second: PlaceModelMO) -> Bool {
+    let secondPlace = PlaceModel(second)
+    return first == secondPlace
 }

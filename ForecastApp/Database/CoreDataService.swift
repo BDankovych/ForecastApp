@@ -50,8 +50,49 @@ class CoreDataService {
         return managedObjectContext
     }()
     
-    static func loadAllCities() -> [PlaceModel] {
-        return []
+    static func loadAllLocations() -> [PlaceModel]{
+        
+        var locations = [PlaceModel]()
+        let locationMO = instance.getObjects(PlaceModelMO.self)
+        for item in locationMO {
+            locations.append(PlaceModel(item))
+        }
+        return locations
+    }
+    
+    static func addLocation(_ place: PlaceModel) {
+        guard let mo = insertObject(PlaceModelMO.self) else {
+            fatalError()
+        }
+        mo.latitude = place.latitude
+        mo.longitude = place.longitude
+        mo.name = place.name
+        mo.subtitle = place.subtitle
+        save()
+    }
+    
+    static func removeLocation(_ place: PlaceModel) {
+        let locationsMO = instance.getObjects(PlaceModelMO.self)
+        for item in locationsMO where place == item {
+            instance.remove(item)
+        }
+    }
+    
+    private static func save() {
+        do {
+            try instance.managedObjectContext?.save()
+        } catch {
+            fatalError()
+        }
+    }
+    
+    private func remove(_ elem: NSManagedObject) {
+        guard let elem = managedObjectContext?.object(with: elem.objectID) else {
+            fatalError()
+        }
+        
+        managedObjectContext?.delete(elem)
+        CoreDataService.save()
     }
     
     private func getObjects<T: NSManagedObject>(_ entity: T.Type, moc: NSManagedObjectContext? = nil, fetchRequest: NSFetchRequest<NSFetchRequestResult>? = nil) -> [T] {

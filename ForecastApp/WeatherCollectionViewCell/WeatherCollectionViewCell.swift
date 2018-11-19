@@ -39,7 +39,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
             formatter.dateFormat = "dd.MM"
         }
         timeLabel.text = formatter.string(from: weatherItem.forecastDate)
-        weatherIcon.image = weatherItem.shortWeatherItems.first!.iconText.imege
+        weatherIcon.image = weatherItem.shortWeatherItems.first!.iconText.image
         temp.text = String(describing: weatherItem.mainItem.temp!)
         minTemp.text = String(describing: weatherItem.mainItem.minTemp!)
         maxTemp.text = String(describing: weatherItem.mainItem.maxTemp!)
