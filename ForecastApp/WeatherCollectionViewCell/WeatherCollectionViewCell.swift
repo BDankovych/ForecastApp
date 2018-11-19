@@ -34,7 +34,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     func configure(with weatherItem: WeatherItem, mode: ForecastMode, timeZone: TimeZone ) {
         let formatter = DateFormatter()
         if mode == .hourly {
-            formatter.dateFormat = "hh a"
+            formatter.dateFormat = "dd.MM \n hh a"
         } else {
             formatter.dateFormat = "dd.MM"
         }

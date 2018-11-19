@@ -39,6 +39,9 @@ class WeatherRequestResult: Mappable {
         var resultList = [WeatherItem(list.first!)!]
         var itemsCount = 1
         
+        var dict : [String: Int] = [resultList.last!.shortWeatherItems.first!.iconText: 1]
+        
+        
         for index in 1..<list.count {
             let itemDay = Calendar.current.component(.day, from: list[index].forecastDate)
             let currentDay = Calendar.current.component(.day, from: resultList.last!.forecastDate)
@@ -70,6 +73,13 @@ class WeatherRequestResult: Mappable {
                     resultList.last!.snowVolume = 0
                 }
                 resultList.last!.snowVolume! += list[index].snowVolume ?? 0
+                
+                if dict[resultList.last!.shortWeatherItems.first!.iconText] == nil {
+                    dict[resultList.last!.shortWeatherItems.first!.iconText] = 0
+                } else {
+                    dict[resultList.last!.shortWeatherItems.first!.iconText]! += 1
+                }
+                
             } else {
                 
                 resultList.last!.mainItem.temp /= Double(itemsCount)
@@ -91,8 +101,18 @@ class WeatherRequestResult: Mappable {
                     resultList.last!.snowVolume = nil
                 }
                 
+                var resultImageName = ""
+                var maxCount = 0
+                for item in dict {
+                    if item.value > maxCount {
+                        maxCount = item.value
+                        resultImageName = item.key
+                    }
+                }
+                resultList.last!.shortWeatherItems.first!.iconText = resultImageName
                 itemsCount = 0
                 resultList.append(WeatherItem(list[index])!)
+                dict = [:]
             }
         }
         
