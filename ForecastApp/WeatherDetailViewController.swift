@@ -52,7 +52,20 @@ class WeatherDetailViewController: BaseViewController {
     @IBOutlet weak var mainWeatherLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     
+    
+    //MARK: outlet for localization
+    
+    @IBOutlet weak var minTemp: UILabel!
+    @IBOutlet weak var maxTemp: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var cloudinessLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var rainylabel: UILabel!
+    @IBOutlet weak var snowyLabel: UILabel!
+    
  
+    
     var place: PlaceModel!
     private var placeTimeZone: TimeZone!
     
@@ -68,7 +81,6 @@ class WeatherDetailViewController: BaseViewController {
     
     private var currentArrowDirection = Direction.up
     
-    //Data
     
     private var dataForDisplaying = [WeatherItem]()
     private var weatherRequestResult: WeatherRequestResult!
@@ -80,8 +92,25 @@ class WeatherDetailViewController: BaseViewController {
         
     }
     
+    override func localizeView() {
+        super.localizeView()
+        minTemp.text = "Minimum temperature, ".localized() + SettingsManager.tempUnits.getSymbol()
+        maxTemp.text = "Maximum temperature, ".localized() + SettingsManager.tempUnits.getSymbol()
+        pressureLabel.text = "Pressure, mmbar".localized()
+        windSpeedLabel.text = "Wind speed, ".localized() + SettingsManager.speedUnits.getSymbol()
+        cloudinessLabel.text = "Cloudiness".localized()
+        humidityLabel.text = "Humidity, %".localized()
+        rainylabel.text = "rainy".localized()
+        snowyLabel.text = "snowy".localized()
+        
+        segmentControll.setTitle("Hourly".localized(), forSegmentAt: 0)
+        segmentControll.setTitle("Daily".localized(), forSegmentAt: 1)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         startActivityIndicator()
+        localizeView()
         configureView(with: place)
         ForecastAPIManager.loadAdditionalInfo(for: place) { (success, weatherResult, error) in
             self.stopActivityIndicator()

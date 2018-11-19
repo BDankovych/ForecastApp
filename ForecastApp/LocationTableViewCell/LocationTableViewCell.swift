@@ -15,16 +15,10 @@ class LocationTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     
-//    static let cellHeight: CGFloat = 80.0
+    static let cellHeight: CGFloat = 80.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func configureView(with placeModel: PlaceModel) {

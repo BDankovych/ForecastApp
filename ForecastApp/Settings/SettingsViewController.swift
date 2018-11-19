@@ -32,6 +32,7 @@ class SettingsViewController: BaseViewController {
     }
     override func viewDidAppear(_ animated: Bool) {
         localizeView()
+        languagesPicker.selectRow(SettingsManager.currentLanguage.rawValue, inComponent: 0, animated: false)
     }
     
     @IBAction func speedSegmentValueChanged(_ sender: Any) {

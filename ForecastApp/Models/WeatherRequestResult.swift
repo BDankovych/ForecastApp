@@ -60,7 +60,6 @@ class WeatherRequestResult: Mappable {
                 if resultList.last!.mainItem.maxTemp < list[index].mainItem.maxTemp {
                     resultList.last!.mainItem.maxTemp = list[index].mainItem.maxTemp
                 }
-                //TODO: think about icon
 
                 if resultList.last!.rainVolume == nil {
                     resultList.last!.rainVolume = 0

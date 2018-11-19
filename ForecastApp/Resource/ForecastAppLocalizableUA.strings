@@ -4,3 +4,15 @@
 "Language" = "Мова";
 "Current location" = "Поточна локація";
 "Settings" = "Налаштування";
+"Minimum temperature, " = "Мінімальна температура, ";
+"Maximum temperature, " = "Ьаксимальна температура, ";
+"Pressure, mmbar" = "Тиск, ммрт";
+"Wind speed, " = "Швидкість вітру, ";
+"Cloudiness" = "Хмарність";
+"Humidity, %"= "Вологість, %";
+"rainy" = "Опади";
+"snowy" = "Сніг";
+
+
+"Hourly" = "Погодинно";
+"Daily" = "Поденно";
