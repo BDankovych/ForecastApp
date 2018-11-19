@@ -35,7 +35,7 @@ class SettingsViewController: BaseViewController {
     }
     
     @IBAction func speedSegmentValueChanged(_ sender: Any) {
-        SettingsManager.setSpeedUnits(SpeedUnits(rawValue: speedSegmentControl.selectedSegmentIndex) ?? .kmh)
+        SettingsManager.setSpeedUnits(SpeedUnits(rawValue: speedSegmentControl.selectedSegmentIndex) ?? .mpsec)
     }
     
     @IBAction func tempSegmentValueChanged(_ sender: Any) {

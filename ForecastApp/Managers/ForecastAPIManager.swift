@@ -21,7 +21,7 @@ class ForecastAPIManager: NSObject {
         let path = "/data/2.5/forecast"
         let latItem = URLQueryItem(name: "lat", value: "\(place.latitude!)")
         let longItem = URLQueryItem(name: "lon", value: "\(place.longitude!)")
-        let unitsItem = URLQueryItem(name: "units", value: "metric")
+        let unitsItem = URLQueryItem(name: "units", value: SettingsManager.tempUnits.uniysDescription)
         let appidItem = URLQueryItem(name: "APPID", value: APPID)
         
         

@@ -116,6 +116,7 @@ class WeatherDetailViewController: BaseViewController {
         currentTemp.text = String(describing: weatherItem.mainItem.temp!)
         mainWeatherLabel.text = weatherItem.shortWeatherItems.first!.main
         weatherDescriptionLabel.text = weatherItem.shortWeatherItems.first!.descroption
+        backgroundImage.image = (weatherItem.shortWeatherItems.first!.iconText + "BG").image
     }
     
     private func configureView(with weatherResult: WeatherRequestResult) {
@@ -200,7 +201,7 @@ extension WeatherDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.cell(cellType: WeatherCollectionViewCell.self, for: indexPath)
-        cell.configure(with: dataForDisplaying[indexPath.row], mode: segmentControll.selectedSegmentIndex == 0 ? .hourly : .daily)
+        cell.configure(with: dataForDisplaying[indexPath.row], mode: segmentControll.selectedSegmentIndex == 0 ? .hourly : .daily, timeZone: placeTimeZone )
         return cell
     }
     

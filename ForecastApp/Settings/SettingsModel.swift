@@ -47,16 +47,25 @@ enum TemperatureUnits: Int {
             return "℉"
         }
     }
+    
+    var uniysDescription: String {
+        switch self {
+        case .celsius:
+            return "metric"
+        case .farengate:
+            return "imperial"
+        }
+    }
 }
 
 enum SpeedUnits: Int {
-    case kmh = 0
+    case mpsec = 0
     case mph = 1
     
     func getSymbol() -> String {
         switch self {
-        case .kmh:
-            return "km/h"
+        case .mpsec:
+            return "m/sec"
         case .mph:
             return "mph"
         }

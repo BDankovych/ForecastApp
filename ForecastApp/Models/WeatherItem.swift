@@ -22,6 +22,10 @@ class ShortWeatherItem: Mappable {
         case iconText = "icon"
     }
     
+    convenience init? (_ obj: ShortWeatherItem){
+        self.init(JSON: obj.toJSON())
+    }
+    
     required init?(map: Map) {
         if map.JSON[JSONKeys.id.rawValue] == nil ||
             map.JSON[JSONKeys.main.rawValue] == nil ||
@@ -49,6 +53,10 @@ class WindWeatherItem: Mappable {
     private enum JSONKeys: String {
         case speed = "speed"
         case degree = "deg"
+    }
+    
+    convenience init? (_ obj: WindWeatherItem){
+        self.init(JSON: obj.toJSON())
     }
     
     required init?(map: Map) {
@@ -81,6 +89,10 @@ class MainWeatherItem: Mappable {
         case humidity = "humidity"
     }
     
+    convenience init?( _ obj: MainWeatherItem) {
+        self.init(JSON: obj.toJSON())
+    }
+    
     required init?(map: Map) {
         if map.JSON[JSONKeys.temp.rawValue] == nil ||
             map.JSON[JSONKeys.minTemp.rawValue] == nil ||
@@ -104,7 +116,6 @@ class MainWeatherItem: Mappable {
 class WeatherItem: Mappable {
     
     var forecastDate: Date!
-    //TODO: add time zone 
     var forecastTimeInterval: Int! {
         didSet {
             forecastDate = Date(timeIntervalSince1970: TimeInterval(forecastTimeInterval));
@@ -116,6 +127,10 @@ class WeatherItem: Mappable {
     var windItem: WindWeatherItem!
     var rainVolume: Double?
     var snowVolume: Double?
+    
+    convenience init?(_ obj: WeatherItem) {
+        self.init(JSON: obj.toJSON())
+    }
     
     private enum JSONKeys: String {
         case forecastTimeInterval = "dt"

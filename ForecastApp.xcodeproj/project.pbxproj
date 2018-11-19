@@ -28,6 +28,7 @@
 		3D9A6FAF21A2DFFF00672F82 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A6FAE21A2DFFF00672F82 /* SettingsViewController.swift */; };
 		3D9A6FB121A2EDC900672F82 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A6FB021A2EDC900672F82 /* String+Localization.swift */; };
 		3D9A6FB621A2EF3E00672F82 /* ForecastAppLocalizableUA.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D9A6FB521A2EF3E00672F82 /* ForecastAppLocalizableUA.strings */; };
+		3D9A6FB821A2FBB900672F82 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A6FB721A2FBB900672F82 /* Double.swift */; };
 		3DEAB59221A1A00900A0023C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAB59121A1A00900A0023C /* AppDelegate.swift */; };
 		3DEAB59421A1A00900A0023C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DEAB59321A1A00900A0023C /* ViewController.swift */; };
 		3DEAB59721A1A00900A0023C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DEAB59521A1A00900A0023C /* Main.storyboard */; };
@@ -63,6 +64,7 @@
 		3D9A6FAE21A2DFFF00672F82 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3D9A6FB021A2EDC900672F82 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
 		3D9A6FB521A2EF3E00672F82 /* ForecastAppLocalizableUA.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = ForecastAppLocalizableUA.strings; sourceTree = "<group>"; };
+		3D9A6FB721A2FBB900672F82 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		3DEAB58E21A1A00900A0023C /* ForecastApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForecastApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DEAB59121A1A00900A0023C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DEAB59321A1A00900A0023C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				3D5DC6FE21A1FFC400FBC532 /* CollectionView.swift */,
 				3D5DC70021A206CC00FBC532 /* String.swift */,
 				3D9A6FB021A2EDC900672F82 /* String+Localization.swift */,
+				3D9A6FB721A2FBB900672F82 /* Double.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				3DEAB5AB21A1A58400A0023C /* TableView.swift in Sources */,
 				3D5DC6E921A1B90000FBC532 /* RoundedView.swift in Sources */,
 				3D5DC6FB21A1FEFD00FBC532 /* WeatherCollectionViewCell.swift in Sources */,
+				3D9A6FB821A2FBB900672F82 /* Double.swift in Sources */,
 				3DEAB59A21A1A00900A0023C /* ForecastApp.xcdatamodeld in Sources */,
 				3DEAB59421A1A00900A0023C /* ViewController.swift in Sources */,
 				3D9A6FAF21A2DFFF00672F82 /* SettingsViewController.swift in Sources */,

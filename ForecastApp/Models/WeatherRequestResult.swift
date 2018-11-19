@@ -36,8 +36,8 @@ class WeatherRequestResult: Mappable {
     
     func getDailyList() -> [WeatherItem] {
         
-        var resultList = [list.first!]
-        var itemsCount = 0
+        var resultList = [WeatherItem(list.first!)!]
+        var itemsCount = 1
         
         for index in 1..<list.count {
             let itemDay = Calendar.current.component(.day, from: list[index].forecastDate)
@@ -61,6 +61,16 @@ class WeatherRequestResult: Mappable {
                     resultList.last!.mainItem.maxTemp = list[index].mainItem.maxTemp
                 }
                 //TODO: think about icon
+
+                if resultList.last!.rainVolume == nil {
+                    resultList.last!.rainVolume = 0
+                }
+                resultList.last!.rainVolume! += list[index].rainVolume ?? 0
+                
+                if resultList.last!.snowVolume == nil {
+                    resultList.last!.snowVolume = 0
+                }
+                resultList.last!.snowVolume! += list[index].snowVolume ?? 0
             } else {
                 
                 resultList.last!.mainItem.temp /= Double(itemsCount)
@@ -71,9 +81,19 @@ class WeatherRequestResult: Mappable {
                 resultList.last!.windItem.degree /= Double(itemsCount)
                 
                 resultList.last!.cloudiness /= itemsCount
+                resultList.last!.rainVolume! /= Double(itemsCount)
+                resultList.last!.snowVolume! /= Double(itemsCount)
+                
+                if resultList.last!.snowVolume == 0.0 {
+                    resultList.last!.snowVolume = nil
+                }
+                
+                if resultList.last!.rainVolume == 0.0 {
+                    resultList.last!.snowVolume = nil
+                }
                 
                 itemsCount = 0
-                resultList.append(list[index])
+                resultList.append(WeatherItem(list[index])!)
             }
         }
         
