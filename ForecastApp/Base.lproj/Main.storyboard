@@ -236,7 +236,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7t-xp-GMe">
-                                <rect key="frame" x="20" y="382" width="87" height="25"/>
+                                <rect key="frame" x="20" y="382" width="154" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="okm-We-GXO"/>
                                 </constraints>
@@ -290,9 +290,9 @@
                                 </connections>
                             </segmentedControl>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cwF-MS-1hv">
-                                <rect key="frame" x="127" y="359" width="267" height="71"/>
+                                <rect key="frame" x="194" y="359" width="200" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="267" id="SrU-fP-Z2r"/>
+                                    <constraint firstAttribute="width" constant="200" id="SrU-fP-Z2r"/>
                                     <constraint firstAttribute="height" constant="71" id="ub9-HP-x6c"/>
                                 </constraints>
                             </pickerView>
@@ -398,11 +398,11 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wc9-h1-MaH">
-                                        <rect key="frame" x="177.33333333333334" y="114.33333333333334" width="59.666666666666657" height="116"/>
+                                        <rect key="frame" x="186.33333333333334" y="114.33333333333334" width="41.666666666666657" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="116" id="vX0-ea-NeS"/>
+                                            <constraint firstAttribute="height" constant="80" id="vX0-ea-NeS"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="100"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="70"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -414,7 +414,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="℃" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKN-2A-sPv">
-                                        <rect key="frame" x="257" y="114.33333333333334" width="40" height="40"/>
+                                        <rect key="frame" x="248" y="114.33333333333334" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="PG8-Xl-rAR"/>
                                             <constraint firstAttribute="width" constant="40" id="UZG-os-45G"/>
@@ -424,7 +424,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9f-DQ-uiU">
-                                        <rect key="frame" x="0.0" y="260" width="414" height="35"/>
+                                        <rect key="frame" x="0.0" y="224" width="414" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="I9V-hX-xe3"/>
                                         </constraints>
@@ -433,7 +433,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPB-cL-Fys">
-                                        <rect key="frame" x="0.0" y="309" width="414" height="35"/>
+                                        <rect key="frame" x="0.0" y="273" width="414" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="5UP-32-oyJ"/>
                                         </constraints>
