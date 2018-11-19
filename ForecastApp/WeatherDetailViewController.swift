@@ -21,6 +21,8 @@ fileprivate enum Direction {
     }
 }
 
+
+
 class WeatherDetailViewController: BaseViewController {
     
     static let identifier = "WeatherDetailViewControllerID"
@@ -38,6 +40,16 @@ class WeatherDetailViewController: BaseViewController {
     @IBOutlet weak var starButton: UIButton!
     
     
+    
+    //Mark: - Current weather
+    @IBOutlet weak var locationsName: UILabel!
+    @IBOutlet weak var currentDate: UILabel!
+    @IBOutlet weak var currentTemp: UILabel!
+    @IBOutlet weak var tempSymbol: UILabel!
+    @IBOutlet weak var mainWeatherLabel: UILabel!
+    @IBOutlet weak var weatherDescriptionLabel: UILabel!
+    
+ 
     var place: PlaceModel!
     
     private var isInFavorites = false {
@@ -66,9 +78,11 @@ class WeatherDetailViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         startActivityIndicator()
+        configureView(with: place)
         ForecastAPIManager.loadAdditionalInfo(for: place) { (success, weatherResult, error) in
             self.stopActivityIndicator()
             if success {
+                self.configureView(with: weatherResult!.list.first!)
                 self.configureView(with: weatherResult!)
             } else {
                 self.showErrorPopup(text: error?.localizedDescription ?? "Undefined error") {
@@ -78,8 +92,22 @@ class WeatherDetailViewController: BaseViewController {
         }
     }
     
+    private func configureView(with place: PlaceModel) {
+        locationsName.text = place.name
+        //TODO: add temp symbol
+    }
+    
+    private func configureView(with weatherItem: WeatherItem) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM d, h:mm a"
+        currentDate.text = formatter.string(from: weatherItem.forecastDate)
+        currentTemp.text = String(describing: weatherItem.mainItem.temp!)
+        mainWeatherLabel.text = weatherItem.shortWeatherItems.first!.main
+        weatherDescriptionLabel.text = weatherItem.shortWeatherItems.first!.descroption
+    }
     
     private func configureView(with weatherResult: WeatherRequestResult) {
+        
         if segmentControll.selectedSegmentIndex == 0 {
             setupWeatherHourly(with: weatherResult)
         } else {

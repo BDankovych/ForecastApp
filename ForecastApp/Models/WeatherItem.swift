@@ -105,6 +105,7 @@ class MainWeatherItem: Mappable {
 class WeatherItem: Mappable {
     
     var forecastDate: Date!
+    //TODO: add time zone 
     var forecastTimeInterval: Int! {
         didSet {
             forecastDate = Date(timeIntervalSince1970: TimeInterval(forecastTimeInterval));
