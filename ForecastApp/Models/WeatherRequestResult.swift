@@ -34,7 +34,7 @@ class WeatherRequestResult: Mappable {
         return list.sorted{ return $0.forecastDate < $1.forecastDate}
     }
     
-    func getDaylyList() -> [WeatherItem] {
+    func getDailyList() -> [WeatherItem] {
         
         var resultList = [list.first!]
         var itemsCount = 0

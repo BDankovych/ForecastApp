@@ -112,7 +112,7 @@ class WeatherDetailViewController: BaseViewController {
         if segmentControll.selectedSegmentIndex == 0 {
             setupWeatherHourly(with: weatherResult)
         } else {
-            setupWeatherDayly(with: weatherResult)
+            setupWeatherDaily(with: weatherResult)
         }
     }
     
@@ -120,7 +120,7 @@ class WeatherDetailViewController: BaseViewController {
         if segmentControll.selectedSegmentIndex == 0 {
             setupWeatherHourly(with: weatherRequestResult)
         } else {
-            setupWeatherDayly(with: weatherRequestResult)
+            setupWeatherDaily(with: weatherRequestResult)
         }
     }
     
@@ -130,8 +130,8 @@ class WeatherDetailViewController: BaseViewController {
         weatherCollectionView.reloadData()
     }
     
-    private func setupWeatherDayly(with weatherResult: WeatherRequestResult) {
-        dataForDisplaying = weatherResult.getDaylyList()
+    private func setupWeatherDaily(with weatherResult: WeatherRequestResult) {
+        dataForDisplaying = weatherResult.getDailyList()
         weatherCollectionView.reloadData()
     }
     
@@ -189,7 +189,7 @@ extension WeatherDetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.cell(cellType: WeatherCollectionViewCell.self, for: indexPath)
-        cell.configure(with: dataForDisplaying[indexPath.row], mode: segmentControll.selectedSegmentIndex == 0 ? .hourly : .dayly)
+        cell.configure(with: dataForDisplaying[indexPath.row], mode: segmentControll.selectedSegmentIndex == 0 ? .hourly : .daily)
         return cell
     }
     

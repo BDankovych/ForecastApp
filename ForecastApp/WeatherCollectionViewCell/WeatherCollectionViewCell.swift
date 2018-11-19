@@ -9,7 +9,7 @@
 import UIKit
 
 enum ForecastMode {
-    case dayly
+    case daily
     case hourly
 }
 
